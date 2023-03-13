@@ -1,23 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import ListItems from './components/list-component';
+import LogoComponent from './components/logo-component';
+import {  } from 'react-dom'
+import { useNavigate } from 'react-router-dom';
 
 function App() {
+  const navigate = useNavigate()
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        
+        <LogoComponent />
+
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+      <ListItems items={[]} />
+
+      <button onClick={() => navigate('/login')} >Go to Login</button>
       </header>
     </div>
   );
